@@ -1,7 +1,9 @@
 from typing import Optional
 
+from classtools import AttrDisplay
 
-class Person:
+
+class Person(AttrDisplay):
     def __init__(
         self,
         name: str,
@@ -17,9 +19,6 @@ class Person:
 
     def giveRaise(self, percent: float):
         self.pay = int(self.pay * (1 + percent))
-
-    def __repr__(self):
-        return f'{self.__class__.__name__}: {self.name} {self.pay}'
 
 
 class Manager(Person):
